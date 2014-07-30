@@ -25,6 +25,8 @@ def main_menu
       contact_email
     elsif main_choice == 'p'
       contact_phone
+    elsif main_choice == 'delete'
+      delete_contact
     elsif main_choice == 'x'
       exit
     else
@@ -94,4 +96,12 @@ def display_contact
     puts 'Address: ' + address.address
   end
 end
+
+def delete_contact
+  list_contacts
+  puts "which contact would you like to delete"
+  display_choice = gets.chomp.to_i
+  Contacts.all.delete_at(display_choice)
+end
+
 main_menu
