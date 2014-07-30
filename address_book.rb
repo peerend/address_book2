@@ -21,6 +21,10 @@ def main_menu
       display_contact
     elsif main_choice == 'a'
       contact_address
+    elsif main_choice == 'e'
+      contact_email
+    elsif main_choice == 'p'
+      contact_phone
     elsif main_choice == 'x'
       exit
     else
