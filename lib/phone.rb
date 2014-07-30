@@ -1,10 +1,10 @@
-class Phone
+class Number
 
-  def initialize(phone)
-    @phone = phone
+  def initialize(number)
+    @number = number
   end
 
-  def phone
-    @phone
+  def number
+    @number
   end
 end

@@ -51,8 +51,8 @@ def contact_phone
   list_contacts
   user_select = gets.chomp.to_i
   puts "enter a phone number"
-  user_phone = gets.chomp
-  Contacts.all[user_select].add_phone(user_phone)
+  user_phone = gets.chomp.to_s
+  Contacts.all[user_select].add_number(user_phone)
 end
 
 def contact_email
@@ -60,7 +60,7 @@ def contact_email
   list_contacts
   user_select = gets.chomp.to_i
   puts "enter a email-address"
-  user_email = gets.chomp
+  user_email = gets.chomp.to_s
   Contacts.all[user_select].add_email(user_email)
 end
 
@@ -69,7 +69,7 @@ def contact_address
   list_contacts
   user_select = gets.chomp.to_i
   puts "enter an address"
-  user_address = gets.chomp
+  user_address = gets.chomp.to_s
   Contacts.all[user_select].add_address(user_address)
 
 end
@@ -79,6 +79,19 @@ def display_contact
   list_contacts
   puts "Which contact (number) would you like to see info for?"
   display_choice = gets.chomp.to_i
-  puts Contacts.all[display_choice].all_info
+  selected_contact = Contacts.all[display_choice]
+
+  puts selected_contact.name
+  selected_contact.phones.each do |phone|
+    puts 'phone number: ' + phone.number
+  end
+
+  selected_contact.emails.each do |email|
+    puts 'Email Address: ' + email.email
+  end
+
+  selected_contact.addresses.each do |address|
+    puts 'Address: ' + address.address
+  end
 end
 main_menu

@@ -25,10 +25,6 @@ class Contacts
     @@all_contacts << self
   end
 
-  def all_info
-    "#{@name}\n#{@emails}\n#{@addresses}\n#{@phones}"
-  end
-
   def name
     @name
   end
@@ -37,9 +33,9 @@ class Contacts
     @phones
   end
 
-  def add_phone(user_phone)
-    new_phone = Phone.new(user_phone)
-    @phones << new_phone
+  def add_number(user_number)
+    new_number = Number.new(user_number)
+    @phones << new_number
   end
 
   def emails
