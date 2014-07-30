@@ -1,6 +1,6 @@
-require 'phone'
-require 'email'
-require 'address'
+require './lib/phone'
+require './lib/email'
+require './lib/address'
 
 class Contacts
 
@@ -26,7 +26,7 @@ class Contacts
   end
 
   def all_info
-    "#{@name}#{@email}\n#{@address}\n#{@phone}"
+    "#{@name}\n#{@emails}\n#{@addresses}\n#{@phones}"
   end
 
   def name

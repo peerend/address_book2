@@ -61,4 +61,14 @@ describe Contacts do
       expect(Contacts.all).to eq [test_contact, ruby_contact]
     end
   end
+  # describe 'all_info' do
+  #   it 'list the contact information' do
+  #     test_contact = Contacts.new('Bob')
+  #     test_contact.save
+  #     test_contact.add_address('123 st')
+  #     test_contact.add_phone(123456)
+  #     test_contact.add_email('bob@gmail')
+  #     expect(test_contact.all_info).to eq
+  #   end
+  # end
 end
